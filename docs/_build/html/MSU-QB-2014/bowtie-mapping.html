@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mapping with bowtie &mdash; Bioinformatics Tutorial 1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Bioinformatics Tutorial 1 documentation" href="../index.html" />
+    <link rel="up" title="Welcome to MSU QB 2014 documentation!" href="index.html" />
+    <link rel="next" title="Renting a computer from Amazon" href="renting-a-computer-from-amazon.html" />
+    <link rel="prev" title="Welcome to MSU QB 2014 documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="renting-a-computer-from-amazon.html" title="Renting a computer from Amazon"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to MSU QB 2014 documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Bioinformatics Tutorial 1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Welcome to MSU QB 2014 documentation!</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="mapping-with-bowtie">
+<h1>Mapping with bowtie<a class="headerlink" href="#mapping-with-bowtie" title="Permalink to this headline">¶</a></h1>
+<p>bowtie is an open source mapping program that&#8217;s fast and easy to use.</p>
+<div class="section" id="installing-bowtie">
+<h2>Installing bowtie<a class="headerlink" href="#installing-bowtie" title="Permalink to this headline">¶</a></h2>
+<p>First, set up a new EC2 server as in
+<a class="reference internal" href="renting-a-computer-from-amazon.html"><em>Renting a computer from Amazon</em></a>.  You&#8217;ll need to use a different
+machine image (AMI) so that we can have more memory and disk space;
+use &#8216;ami-fb16f992&#8217;, and leave the instance as &#8216;large&#8217; (the default).
+This gives you 7.5gb of RAM, 2 processors, each twice as fast as the
+machine we&#8217;ve been using, and 850gb of disk space to work with!  It
+does cost 3 times as much (34 cents/hour) so please remember to shut
+them down...</p>
+<p>Now, log in, and download bowtie.  Ordinarily you would do this by going
+to the bowtie site:</p>
+<blockquote>
+<div><a class="reference external" href="http://bowtie-bio.sourceforge.net/index.shtml">http://bowtie-bio.sourceforge.net/index.shtml</a></div></blockquote>
+<p>and downloading the latest source release, a zip file &#8211; note that
+it&#8217;s tough to use curl to download files from Sourceforge because they
+hide the real URL from you, so this might be a situation where
+(outside of this course) you need to download the file to your laptop
+first.</p>
+<p>For the course, I&#8217;ve put it on my Amazon files section (in S3) where
+you can download it directly, so do:</p>
+<div class="highlight-python"><pre>%% cd
+%% curl -O https://s3.amazonaws.com/angus.ged.msu.edu/bowtie-0.12.7-src.zip
+%% unzip bowtie-0.12.7-src.zip</pre>
+</div>
+<p>This creates a directory &#8216;bowtie-0.12.7&#8217;, containing the source code.
+Bowtie is written in C and C++, so unlike Python, you have to go
+through a compilation step where you build the C/C++ source code into
+something that the computer can run.  To do that,</p>
+<div class="highlight-python"><pre>%% cd bowtie-0.12.7
+%% make
+%% cp bowtie bowtie-build bowtie-inspect /usr/local/bin</pre>
+</div>
+<p>(This will take a while.)</p>
+<p>Great!  We&#8217;ve installed bowtie!</p>
+</div>
+<div class="section" id="running-bowtie-on-a-campylobacter-data-set">
+<h2>Running bowtie on a Campylobacter data set<a class="headerlink" href="#running-bowtie-on-a-campylobacter-data-set" title="Permalink to this headline">¶</a></h2>
+<p>Now, let&#8217;s go get a data set.  We&#8217;re going to put it in a directory on
+a different disk:</p>
+<div class="highlight-python"><pre>%% mkdir /mnt/campy
+%% cd /mnt/campy</pre>
+</div>
+<p>You can see using &#8216;df&#8217; that &#8216;/mnt&#8217; is much bigger than &#8216;/&#8217;, which is where
+we were working before.</p>
+<div class="highlight-python"><pre>%% df</pre>
+</div>
+<p>Note that you can always see how much disk space you have in a particular
+directory using &#8216;df $directory&#8217;, so e.g.</p>
+<div class="highlight-python"><pre>%% df .</pre>
+</div>
+<p>shows the disk space left on your current disk.</p>
+<p>Now get the files:</p>
+<div class="highlight-python"><pre>%% curl -O https://s3.amazonaws.com/angus.ged.msu.edu/campy.fa.gz
+%% curl -O https://s3.amazonaws.com/angus.ged.msu.edu/campy-pre-1m.fastq.gz</pre>
+</div>
+<p>This uses the program &#8216;curl&#8217; to grab the files at those URLs and download
+them to the EC2 computer; it&#8217;s similar to downloading them to your
+laptop by entering them into your Web browser, then copying them over
+to the EC2 computer with SCP.  The difference is that the files don&#8217;t
+actually have to travel over your local network connection, which is
+a big advantage &#8211; they go straight from wherever they&#8217;re hosted (in
+this case, Amazon S3) to the EC2 computer.</p>
+<p>Now, if you do</p>
+<div class="highlight-python"><pre>%% ls</pre>
+</div>
+<p>you should see two files, <tt class="docutils literal"><span class="pre">campy-pre-1m.fastq.gz</span></tt> and <tt class="docutils literal"><span class="pre">campy.fa.gz</span></tt>.
+Uncompress them both:</p>
+<div class="highlight-python"><pre>%% gunzip *.gz</pre>
+</div>
+<p>You will now have two files: one, &#8216;campy.fa&#8217;, is the campylobacter
+genome in FASTA format.  The other, &#8216;campy-pre-1m.fastq&#8217; is a bunch
+of genome resequencing reads in FASTQ format &#8211; take a look at it
+with &#8216;less&#8217; if you&#8217;re interested.</p>
+<p>Now you need to index the genome so that bowtie can work with it.  You
+only need to do this once for each genome:</p>
+<div class="highlight-python"><pre>%% bowtie-build campy.fa campy</pre>
+</div>
+<p>And, finally... map!</p>
+<div class="highlight-python"><pre>%% bowtie -p 2 campy campy-pre-1m.fastq &gt; campy-pre-1m.map</pre>
+</div>
+<p>Here, the &#8216;-p 2&#8217; says &#8220;use both processors&#8221;.  By default bowtie will
+use only one.</p>
+<p>You should see the following output:</p>
+<div class="highlight-python"><pre># reads processed: 1000000
+# reads with at least one reported alignment: 992463 (99.25%)
+# reads that failed to align: 7537 (0.75%)
+Reported 992463 alignments to 1 output stream(s)</pre>
+</div>
+<p>1m reads, 99.25% of which match!</p>
+<p>You can now take a look at the mapping file with &#8216;less&#8217;:</p>
+<div class="highlight-python"><pre>%% less campy-pre-1m.map</pre>
+</div>
+<p>Each line looks like this:</p>
+<div class="highlight-python"><pre>HWI-EAS216_0019:4:1:1095:15232#0/1      +       campy_genome    830405  TGTTCATTTTCNTTAAACACTGTTCTTGNNACACT     &gt;&lt;7&gt;&lt;7&gt;&gt;&gt;5/&amp;0008888;AAAAA##########     0       11:A&gt;N,25:C&gt;T,28:A&gt;N,29:A&gt;N</pre>
+</div>
+<p>That&#8217;s: the name of the read, the orientation, the chromosome, the
+position (starting) of the mapped read, the mapped read, the quality
+scores of the mapped read, something more complicated, and a
+description of where this read contains mismatches with the reference.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Mapping with bowtie</a><ul>
+<li><a class="reference internal" href="#installing-bowtie">Installing bowtie</a></li>
+<li><a class="reference internal" href="#running-bowtie-on-a-campylobacter-data-set">Running bowtie on a Campylobacter data set</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to MSU QB 2014 documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="renting-a-computer-from-amazon.html"
+                        title="next chapter">Renting a computer from Amazon</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/MSU-QB-2014/bowtie-mapping.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="renting-a-computer-from-amazon.html" title="Renting a computer from Amazon"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to MSU QB 2014 documentation!"
+             >previous</a> |</li>
+        <li><a href="../index.html">Bioinformatics Tutorial 1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Welcome to MSU QB 2014 documentation!</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Jiarong.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>
