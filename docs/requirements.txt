@@ -1,2 +1,1 @@
-phinx-better-theme==0.1.4
-# other dependencies for your docs if any
+sphinx-better-theme==0.1.4
