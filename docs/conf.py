@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Bioinformatics tutorials'
+project = u'Bioinformatics Tutorial'
 copyright = u'2014, Jiarong'
 
 # The version info for the project you're documenting, acts as replacement for

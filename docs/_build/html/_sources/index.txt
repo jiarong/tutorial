@@ -11,7 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
-   MSU-QB-2014
+   MSU-QB-2014/index
 
 
 Indices and tables
