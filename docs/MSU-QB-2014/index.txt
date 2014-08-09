@@ -1,7 +1,72 @@
 Welcome to 2014 MSU QB summer genomics tutorial
 ====================================================
 
-Contents:
+========  ============================================
+Day       Schedule
+========  ============================================
+Wed 8/13  * 3-5pm: Read mapping and variant calling
+========  ============================================
+THU 8/14  * 3-5pm: Genome assembly
+========  ============================================
+
+
+Links
+=====
+
+Humor
+-----
+
+* `Data Sharing and Management Snafu in 3 Short Acts <http://www.youtube.com/watch?v=N2zK3sAtr-4&feature=youtu.be>`__
+
+Resources
+---------
+
+* `Biostar <http://biostars.org>`__
+
+  A high quality question & answer Web site.
+
+* `SEQanswers <http://seqanswers.com/>`__
+
+  A discussion and information site for next-generation sequencing.
+
+* `Software Carpentry lessons <http://software-carpentry.org/4_0/index.html>`__
+
+  A large number of open and reusable tutorials on the shell, programming,
+  version control, etc.
+
+Blogs
+-----
+
+* http://www.genomesunzipped.org/
+
+  Genomes Unzipped.
+
+* http://ivory.idyll.org/blog/
+
+  Titus's blog.
+
+* http://bcbio.wordpress.com/
+
+  Blue Collar Bioinformatics
+
+* http://massgenomics.org/
+
+  Mass Genomics
+
+* http://blog.nextgenetics.net/
+
+  Next Genetics
+
+* http://gettinggeneticsdone.blogspot.com/
+
+  Getting Genetics Done
+
+* http://omicsomics.blogspot.com/
+
+  Omics! Omics!
+
+
+Table Of Contents:
 
 .. toctree::
    :maxdepth: 2
