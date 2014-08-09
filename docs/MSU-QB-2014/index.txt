@@ -4,7 +4,9 @@ Welcome to 2014 MSU QB summer genomics tutorial
 Contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
+
+   amazon/index
    variant
-   renting-a-computer-from-amazon
+   assembling-ecoli-with-velvet
