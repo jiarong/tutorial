@@ -9,14 +9,15 @@ Wed 8/13  * 2-3pm: :doc:`Get started with Amazon EC2 <amazon/index>`
 Thu 8/14  * 2-5pm: :doc:`Genome assembly <assembling-ecoli-with-velvet>`
 ========  ==================================================================
 
+Sequencing technologes:
 
-Links
-=====
+* `454 <https://www.youtube.com/watch?v=bFNjxKHP8Jc&list=PL592D0AEB58337E73>`__
 
-Humor
------
+* `Illumina <https://www.youtube.com/watch?v=womKfikWlxM`__
 
-* `Data Sharing and Management Snafu in 3 Short Acts <http://www.youtube.com/watch?v=N2zK3sAtr-4&feature=youtu.be>`__
+* `PacBio <https://www.youtube.com/watch?v=_B_cUZ8hSYU>`__
+
+* `NanoPore <https://www.youtube.com/watch?v=3UHw22hBpAk>`__
 
 Resources
 ---------
@@ -34,40 +35,9 @@ Resources
   A large number of open and reusable tutorials on the shell, programming,
   version control, etc.
 
-Blogs
------
-
-* http://www.genomesunzipped.org/
-
-  Genomes Unzipped.
-
-* http://ivory.idyll.org/blog/
-
-  Titus's blog.
-
-* http://bcbio.wordpress.com/
-
-  Blue Collar Bioinformatics
-
-* http://massgenomics.org/
-
-  Mass Genomics
-
-* http://blog.nextgenetics.net/
-
-  Next Genetics
-
-* http://gettinggeneticsdone.blogspot.com/
-
-  Getting Genetics Done
-
-* http://omicsomics.blogspot.com/
-
-  Omics! Omics!
-
 
 Table Of Contents
-==================
+------------------
 
 .. toctree::
    :maxdepth: 2
