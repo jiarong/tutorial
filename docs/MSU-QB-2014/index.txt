@@ -4,8 +4,9 @@ Welcome to 2014 MSU QB summer microbial genomics tutorial
 ========  ==================================================================
 Day       Schedule
 ========  ==================================================================
-Wed 8/13  * 3-5pm: :doc:`Read mapping and variant calling <variant>`
-THU 8/14  * 3-5pm: :doc:`Genome assembly <assembling-ecoli-with-velvet>`
+Wed 8/13  * 2-3pm: :doc:`Get started with Amazon EC2 <amazon/index>`
+          * 3-5pm: :doc:`Read mapping and variant calling <variant>`
+Thu 8/14  * 2-5pm: :doc:`Genome assembly <assembling-ecoli-with-velvet>`
 ========  ==================================================================
 
 
