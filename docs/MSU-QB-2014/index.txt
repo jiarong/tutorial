@@ -9,11 +9,12 @@ Wed 8/13  * 2-3pm: :doc:`Get started with Amazon EC2 <amazon/index>`
 Thu 8/14  * 2-5pm: :doc:`Genome assembly <assembling-ecoli-with-velvet>`
 ========  ==================================================================
 
-Sequencing technologes:
+Sequencing technologes
+-----------------------
 
 * `454 <https://www.youtube.com/watch?v=bFNjxKHP8Jc&list=PL592D0AEB58337E73>`__
 
-* `Illumina <https://www.youtube.com/watch?v=womKfikWlxM`__
+* `Illumina <https://www.youtube.com/watch?v=womKfikWlxM>`__
 
 * `PacBio <https://www.youtube.com/watch?v=_B_cUZ8hSYU>`__
 
