@@ -12,30 +12,31 @@ Booting an Amazon AMI
 ~~~~~~~~~~~~~~~~~~~~~
 
 Start up an Amazon computer (m1.large or m1.xlarge) using AMI
-ami-7607d01e (see :doc:`amazon/start-up-an-ec2-instance` and
+ami-d25283ba (MSU 2014 QB Summer Course) (see :doc:`amazon/start-up-an-ec2-instance` and
 :doc:`amazon/starting-up-a-custom-ami`).
 
-Log in `with Windows <amazon/log-in-with-ssh-win.html>`__ or
+Log in the cloud machine from our local computer `with Windows <amazon/log-in-with-ssh-win.html>`__ or
 `from Mac OS X <amazon/log-in-with-ssh-mac.html>`__.
 
-Updating the operating system
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Logging in
+==========
 
-Copy and paste the following two commands
-::
+Log in and type::
 
-   apt-get update
-   apt-get -y install screen git curl gcc make g++ python-dev unzip \
-           default-jre pkg-config libncurses5-dev r-base-core \
-           r-cran-gplots python-matplotlib sysstat
+   sudo bash
 
-to update the computer with all the bundled software you'll need.
+to change into superuser mode.
 
-Install software
+Software
 ~~~~~~~~~~~~~~~~
 
-First, we need to install the `BWA aligner
-<http://bio-bwa.sourceforge.net/>`__::
+Softwares are already installed in the ami loaded. Tools used in this tutorial are:
+
+- bwa (mapping reads to reference genom)
+- samtools (a fast and versatile tool for processing DNA alignment in `SAM/BAM format <http://samtools.sourceforge.net/>`__.
+
+
+.. First, we need to install the `BWA aligner <http://bio-bwa.sourceforge.net/>`__::
 
    cd /root
    wget -O bwa-0.7.10.tar.bz2 http://sourceforge.net/projects/bio-bwa/files/bwa-0.7.10.tar.bz2/download
@@ -46,7 +47,7 @@ First, we need to install the `BWA aligner
 
    cp bwa /usr/local/bin
 
-Also install samtools::
+.. Also install samtools::
 
    apt-get -y install samtools
 
@@ -65,7 +66,17 @@ Also install samtools::
 Download data
 ~~~~~~~~~~~~~
 
-Download the reference genome and the resequencing reads::
+Data are already download in "/mnt" directory::
+
+   ls /mnt
+
+to check the data files:
+
+- assembly (directory of data for tomorrow's workshop)
+- REL606.fa (reference genome)
+- SRR098038.fastq.gz (reads from illumina sequencing)
+
+.. Download the reference genome and the resequencing reads::
 
    cd /mnt
 
@@ -74,9 +85,9 @@ Download the reference genome and the resequencing reads::
 
    curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR098/SRR098038/SRR098038.fastq.gz
 
-Note, this last URL is the "Fastq files (FTP)" link from the European
-Nucleotide Archive (ENA) for this sample:
-http://www.ebi.ac.uk/ena/data/view/SRR098042.
+.. Note, this last URL is the "Fastq files (FTP)" link from the European
+.. Nucleotide Archive (ENA) for this sample:
+.. http://www.ebi.ac.uk/ena/data/view/SRR098042.
 
 Do the mapping
 ~~~~~~~~~~~~~~
@@ -119,7 +130,7 @@ And index the sorted BAM file::
 Visualizing alignments
 ~~~~~~~~~~~~~~~~~~~~~~
 
-At this point you can visualize with samtools tview or `Tablet <http://bioinf.scri.ac.uk/tablet/>`__.
+.. At this point you can visualize with samtools tview or `Tablet <http://bioinf.scri.ac.uk/tablet/>`__.
 
 'samtools tview' is a text interface that you use from the command
 line; run it like so::
@@ -137,7 +148,7 @@ position 553093 in the BAM file.
 
 Use 'q' to quit.
 
-For the `Tablet viewer <http://bioinf.scri.ac.uk/tablet/>`__, click on
+.. For the `Tablet viewer <http://bioinf.scri.ac.uk/tablet/>`__, click on
 the link and get it installed on your local computer.  Then, start it
 up as an application.  To open your alignments in Tablet, you'll need
 three files on your local computer: ``REL606.fa``, ``SRR098042.sorted.bam``,
