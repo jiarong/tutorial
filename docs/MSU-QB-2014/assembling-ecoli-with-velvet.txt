@@ -77,7 +77,7 @@ normalization <http://ged.msu.edu/papers/2012-diginorm/>`__ that will
 assemble quickly. ::
 
 Running an assembly
-===================
+~~~~~~~~~~~~~~~~~~~
 
 Go inside the data directory::
 
@@ -108,7 +108,7 @@ Now check out the stats for the assembled contigs for a cutoff of 1000::
 (Also read: `What does k control in de Bruijn graph assemblers? <http://ivory.idyll.org/blog/the-k-parameter.html>`__.)
 
 Comparing and evaluating assemblies - QUAST
-===========================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Run QUAST to mapping contigs (ecoli.23/contigs.fa, and ecoli.25/contigs.fa) reference genome (ecoliMG1655.fa)::
@@ -126,7 +126,7 @@ The first bits to look at are Genome fraction (%) and # misassembled contigs,
 I think.
 
 Searching assemblies -- BLAST
-=============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. Install BLAST::
 
@@ -158,7 +158,7 @@ The commandline for BLAST is::
    blastall -i crp.fa -d ecoli-21.fa -p tblastn -b 1 -v 1
 
 Questions and Discussion Points
-===============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Why do we use a lower cutoff of 1kb for the assemstats3 links, above?  Why
 not 0?

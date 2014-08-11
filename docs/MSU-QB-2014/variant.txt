@@ -28,7 +28,7 @@ Log in and type::
 to change into superuser mode.
 
 Software
-~~~~~~~~~~~~~~~~
+================
 
 Softwares are already installed in the ami loaded. Tools used in this tutorial are:
 
@@ -64,7 +64,7 @@ Softwares are already installed in the ami loaded. Tools used in this tutorial a
    cp *.pl maq2sam-long maq2sam-short md5fa md5sum-lite wgsim /usr/local/bin/
 
 Download data
-~~~~~~~~~~~~~
+=============
 
 Data are already download in "/mnt" directory::
 
