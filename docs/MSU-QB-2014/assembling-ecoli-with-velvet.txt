@@ -56,8 +56,7 @@ Softwares and packages are already installed:
    make MAXKMERLENGTH=51
    cp velvet? /usr/local/bin
 
-.. as well as `Quast <http://quast.bioinf.spbau.ru/manual.html>`__,
-software for evaluating the assembly against the known reference: ::
+.. as well as `Quast <http://quast.bioinf.spbau.ru/manual.html>`__, software for evaluating the assembly against the known reference: ::
 
    cd /root
    curl -O -L https://downloads.sourceforge.net/project/quast/quast-2.3.tar.gz
@@ -67,14 +66,13 @@ Data
 ====
 
 Data is already downloaded in /mnt/assembly::
+
    ls /mnt/assembly
 
-The first data set
-(ecoli_ref-5m-trim.fastq.gz) is the trimmed PE data sets from the
-other day (see :doc:`short-read-quality-evaluation`), and the second
-data set is a specially processed data set using `digital
-normalization <http://ged.msu.edu/papers/2012-diginorm/>`__ that will
-assemble quickly. ::
+to see data in "/mnt/assembly":
+
+- ecoli_ref-5m-trim.fastq.gz: quality trimmed pair end data sets from E. coli genome sequence data.
+- ecoli-reads-5m-dn-paired.fa.gz: data set is a specially processed data set using `digital normalization <http://ged.msu.edu/papers/2012-diginorm/>`__ that will assemble quickly.
 
 Running an assembly
 ~~~~~~~~~~~~~~~~~~~
@@ -149,6 +147,7 @@ Build BLAST databases for the assemblies you've done::
 
 BLAST is already installed.
 Let's search for a specific gene (CRP, a transcription regulator).
+
 .. -- first, download a file containing your protein sequence of interest::
 
    curl -O http://athyra.idyll.org/~t/crp.fa
