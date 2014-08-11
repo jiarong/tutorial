@@ -100,6 +100,7 @@ html_theme = 'better'
 
 #html_theme = 'default'
 #html_style = '/default.css'  # hack for default sphinx theme
+html_style = 'labibi.css'  # hack for default sphinx theme
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the

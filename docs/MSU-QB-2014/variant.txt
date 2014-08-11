@@ -32,8 +32,8 @@ Software
 
 Softwares are already installed in the ami loaded. Tools used in this tutorial are:
 
-- bwa (mapping reads to reference genom)
-- samtools (a fast and versatile tool for processing DNA alignment in `SAM/BAM format <http://samtools.sourceforge.net/>`__.
+- bwa (mapping reads to reference genome)
+- samtools (a fast and versatile tool for processing DNA alignment in `SAM/BAM format <http://samtools.sourceforge.net/>`__.)
 
 
 .. First, we need to install the `BWA aligner <http://bio-bwa.sourceforge.net/>`__::
