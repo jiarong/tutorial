@@ -94,11 +94,13 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-from better import better_theme_path
-html_theme_path = [better_theme_path]
-html_theme = 'better'
 
-#html_theme = 'default'
+#from better import better_theme_path
+#html_theme_path = [better_theme_path]
+#html_theme = 'better'
+
+html_theme = 'default'
+
 #html_style = '/default.css'  # hack for default sphinx theme
 html_style = 'labibi.css'  # hack for default sphinx theme
 
