@@ -1,4 +1,4 @@
-Technical guide to the ANGUS course
+Technical guide to the workshop
 ===================================
 
 Packages we install
