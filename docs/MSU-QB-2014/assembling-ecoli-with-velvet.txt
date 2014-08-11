@@ -62,8 +62,6 @@ Softwares and packages are already installed:
    curl -O -L https://downloads.sourceforge.net/project/quast/quast-2.3.tar.gz
    tar xzf quast-2.3.tar.gz
 
-.. test
-
 Data
 ====
 
