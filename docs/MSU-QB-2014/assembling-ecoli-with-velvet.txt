@@ -112,7 +112,7 @@ Comparing and evaluating assemblies - QUAST
 Run QUAST to mapping contigs (ecoli.23/contigs.fa, and ecoli.25/contigs.fa) reference genome (ecoliMG1655.fa)::
 
    gunzip ecoliMG1655.fa.gz
-   quast.py -R ecoliMG1655.fa ecoli.*/contigs.fa
+   /root/quast-2.3/quast.py -R ecoliMG1655.fa ecoli.*/contigs.fa
 
 Note that here we're looking at *all* the assemblies we've generated.
 
