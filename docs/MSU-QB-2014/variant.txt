@@ -148,12 +148,7 @@ position 553093 in the BAM file.
 
 Use 'q' to quit.
 
-.. For the `Tablet viewer <http://bioinf.scri.ac.uk/tablet/>`__, click on
-the link and get it installed on your local computer.  Then, start it
-up as an application.  To open your alignments in Tablet, you'll need
-three files on your local computer: ``REL606.fa``, ``SRR098042.sorted.bam``,
-and ``SRR098042.sorted.bam.bai``.  You can copy them over using Dropbox,
-for example.
+.. For the `Tablet viewer <http://bioinf.scri.ac.uk/tablet/>`__, click on the link and get it installed on your local computer. Then, start it up as an application.  To open your alignments in Tablet, you'll need three files on your local computer: ``REL606.fa``, ``SRR098042.sorted.bam``,and ``SRR098042.sorted.bam.bai``.  You can copy them over using Dropbox, for example.
 
 Counting alignments
 ~~~~~~~~~~~~~~~~~~~

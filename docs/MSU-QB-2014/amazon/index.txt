@@ -8,5 +8,4 @@ Amazon Web Services instructions
    log-in-with-ssh-mac
    log-in-with-ssh-win
    terminating-your-instance.txt
-
    starting-up-a-custom-ami
