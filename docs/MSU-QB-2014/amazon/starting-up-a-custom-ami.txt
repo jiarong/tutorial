@@ -14,11 +14,14 @@ To boot these, go to EC2/Launch and select "Community AMIs" instead of
 the default "Quick Start"; 
 
 Then type in the AMI number or name given to
-you in the tutorial.  Below is a screenshot of an example, but we need to use:
+you in the tutorial.  The AMI in the below screenshot is **NOT the right one
+**. We need to use:
+
 
 **ami-d25283ba**
 
-for this whole workship. Or you can type in "MSU" in the search box and hit
+
+for this whole workship. Or you can just type "MSU" in the search box and hit
 ENTER. **"MSU 2014 QB Summer Course"** is the one needed.
 
 Then proceed with the rest of
