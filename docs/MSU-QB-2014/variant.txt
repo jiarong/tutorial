@@ -192,7 +192,7 @@ You can check out the VCF file by using 'tail' to look at the bottom::
 Each variant call line consists of the chromosome name (for E. coli
 REL606, there's only one chromosome - rel606); the position within the
 reference; an ID (here always '.'); the reference call; the variant
-call; and a bunch of additional information about
+call; and a bunch of additional information.
 
 Again, you can use 'samtools tview' and then type (for example) 'g'
 'rel606:4616538' to go visit one of the positions.  The format for the
