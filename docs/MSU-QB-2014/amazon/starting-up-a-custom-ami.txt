@@ -14,10 +14,10 @@ To boot these, go to EC2/Launch and select "Community AMIs" instead of
 the default "Quick Start"; 
 
 | Then type in the AMI number or name given to you in the tutorial.
-  The AMI in   the below screenshot is **NOT the right one**. We need to use:
+  The **AMI in the below screenshot is NOT the right one**. We need to use:
 |
 |
-| **ami-d25283ba**
+|       **ami-d25283ba**
 |
 
 for this whole workship. Or you can just type "MSU" in the search box and hit
