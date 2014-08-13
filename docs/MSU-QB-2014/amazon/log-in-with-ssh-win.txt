@@ -2,6 +2,18 @@
 Logging into your new instance "in the cloud" (Windows version)
 ===============================================================
 
+Download .pem file
+===================
+First we need a private key file to log in; it is the .pem file we already
+created during the setup of amazon instance. For convience of managing the
+shared account, we want you all to use the same .pem file, which can be
+downloaded from:
+
+**http://lyorn.idyll.org/~gjr/public/QB2014/QB2014.pem**
+
+It should be downloaded into your "Downloads" folder. Move it onto "Desktop".
+
+
 Download Putty and Puttygen from here: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 Generate a ppk file from your pem file
