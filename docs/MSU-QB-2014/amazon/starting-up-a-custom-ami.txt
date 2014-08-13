@@ -26,5 +26,5 @@ ENTER. **"MSU 2014 QB Summer Course"** is the one needed.
 Then proceed with the rest of
 :doc:`start-up-an-ec2-instance`.
 
-.. image:: images/amazon-diff-ami.png
+.. image:: images/custom-ami.png
    :width: 50%
