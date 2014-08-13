@@ -10,7 +10,11 @@ Go to 'https://aws.amazon.com' in a Web browser.
 
 Select 'My Account/Console' menu option 'AWS Management Console."
 
-Log in with your username & password.
+.. Log in with your username & password.
+Log in with the following:
+
+- **username: qb2014msu@gmail.com**
+- **password: TemporaryQB2014**
 
 Make sure it says North Virginia in the upper right, then select EC2
 (upper left).
