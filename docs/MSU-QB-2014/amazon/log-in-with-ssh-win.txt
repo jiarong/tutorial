@@ -11,8 +11,13 @@ downloaded from:
 
 **http://lyorn.idyll.org/~gjr/public/QB2014/QB2014.pem**
 
-It should be downloaded into your "Downloads" folder. Move it onto "Desktop".
+If your browser is firefox with default settings, it should be downloaded into your "Downloads" folder. Move it onto "Desktop".
 
+If your browser is chrome with default settings, the above link will be shown
+as a page with text. right click and select "Save As". In the pop up window,
+change the directory to "Desktop" and the file name is still "QB2014.pem"
+
+Other browsers should be similar to either of the above two case.
 
 Download Putty and Puttygen from here: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
