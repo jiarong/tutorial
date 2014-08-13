@@ -64,7 +64,7 @@ Select "Launch Instance."
 .. image:: images/amazon-7.png
    :width: 80%
 
-Click on the link of instance started.
+Click on the link of instance you just started.
 
 .. image:: images/launch_status.png
    :width: 80%
