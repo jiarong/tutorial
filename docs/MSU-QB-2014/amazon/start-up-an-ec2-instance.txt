@@ -20,12 +20,12 @@ Make sure it says North Virginia in the upper right, then select EC2
 (upper left).
 
 .. image:: images/amazon-1.png
-   :width: 80%
+   :width: 60%
 
 Select "Launch Instance" (midway down the page).
 
 .. image:: images/amazon-2.png
-   :width: 80%
+   :width: 60%
 
 Next, scroll down the list of operating system types until you find
 Ubuntu 14.04 LTS (PV) -- it should be at the very bottom.  Click 'select'.
@@ -33,53 +33,53 @@ Ubuntu 14.04 LTS (PV) -- it should be at the very bottom.  Click 'select'.
 operating system instead of Ubuntu 14.04.)
 
 .. image:: images/amazon-3.png
-   :width: 80%
+   :width: 60%
 
 Scroll down the list of instance types until you find "m1.xlarge".  Select
 the box to the left, and then click "Review and Launch."
 
 .. image:: images/amazon-4.png
-   :width: 80%
+   :width: 60%
 
 Ignore the warning, check that it says "Ubuntu 14.04 LTS (PV)", and cick
 "Launch".
 
 .. image:: images/amazon-5.png
-   :width: 80%
+   :width: 60%
 
 .. The **first** time through, you will have to "create a new key pair", which you must then name (something like 'amazon') and download.
 
 .. After this first time, you will be able to "Choose an existing key pair".
 Normally you will need to "create a new key pair" the first time through.
-However, for the purpose of easier management,
+However, for the purpose of easier management of our shared accout,
 
 **Select "Choose an existing key pair" and Select a key pair "QB2014"**.
 
 ..
    image:: images/amazon-6.png
-   :width: 80%
+   :width: 60%
 
 Select "Launch Instance."
 
 .. image:: images/amazon-7.png
-   :width: 80%
+   :width: 60%
 
 Click on the link of instance you just started.
 
 .. image:: images/launch_status.png
-   :width: 80%
+   :width: 60%
 
 Then you should see a "pending" line in the menu.
 
 .. image:: images/amazon-8.png
-   :width: 80%
+   :width: 60%
 
 Wait until it turns green, then make a note of the "Public DNS" (we
 suggest copying and pasting it into a text notepad somewhere).  This
 is your machine name, which you will need for logging in.
 
 .. image:: images/amazon-9.png
-   :width: 80%
+   :width: 60%
 
 Then, go to :doc:`log-in-with-ssh-win` or :doc:`log-in-with-ssh-mac`
 
