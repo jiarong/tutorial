@@ -47,11 +47,15 @@ Ignore the warning, check that it says "Ubuntu 14.04 LTS (PV)", and cick
 .. image:: images/amazon-5.png
    :width: 50%
 
-The *first* time through, you will have to "create a new key pair", which
-you must then name (something like 'amazon') and download.
+.. The **first** time through, you will have to "create a new key pair", which you must then name (something like 'amazon') and download.
 
-After this first time, you will be able to select an existing key pair.
+.. After this first time, you will be able to "Choose an existing key pair".
+Normally you will need to "create a new key pair" the first time through.
+However, for the purpose of easier management,
 
+**Select "Choose an existing key pair" and Select a key pair "QB2014"**.
+
+..
 .. image:: images/amazon-6.png
    :width: 50%
 
