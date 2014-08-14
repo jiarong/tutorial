@@ -41,8 +41,24 @@ the box to the left, and then click "Review and Launch."
 .. image:: images/amazon-4.png
    :width: 60%
 
-Ignore the warning, check that it says "Ubuntu 14.04 LTS (PV)", and cick
-"Launch".
+Before the launch, we need to name our intances, so we can tell ours from
+others'. Click on "5.Tag Instance" at the top of that page.
+
+.. image:: images/revew.png
+   :width: 60%
+
+Add an unique value at the "Value" column, e.g. your name. Then click on
+"6.Configure Security Group".
+
+.. image:: images/name_instance.png
+   :width: 60%
+
+Choose "Select an existing security group", select "for_class" under column "Name" and click "Review and Launch":
+
+.. image:: images/pick_existing_group.png
+   :width: 60%
+
+Ignore the warning, double check that it says "Ubuntu 14.04 LTS (PV)" at AMI Details, and cick "Launch".
 
 .. image:: images/amazon-5.png
    :width: 60%
@@ -58,6 +74,7 @@ However, for the purpose of easier management of our shared accout,
 ..
    image:: images/amazon-6.png
    :width: 60%
+
 
 Select "Launch Instance."
 
