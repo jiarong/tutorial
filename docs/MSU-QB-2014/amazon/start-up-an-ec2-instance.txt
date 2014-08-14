@@ -44,7 +44,7 @@ the box to the left, and then click "Review and Launch."
 Before the launch, we need to name our intances, so we can tell ours from
 others'. Click on "5.Tag Instance" at the top of that page.
 
-.. image:: images/revew.png
+.. image:: images/review.png
    :width: 60%
 
 Add an unique value at the "Value" column, e.g. your name. Then click on
